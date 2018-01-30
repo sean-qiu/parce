@@ -8,7 +8,7 @@ const tempPath = resolve(rootPath, '.temp')
 
 let projectConfig = {
     port: 8080,
-    title: 'Parce',
+    title: 'senses-parce',
     publicPath: isDevelopment ? '/' : '/dist/',
     dllEntry: '',
     pathConfig: {},
