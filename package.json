@@ -1,16 +1,16 @@
 {
-  "name": "parce",
+  "name": "senses-parce",
   "version": "0.0.32",
-  "description": "前端构建工具",
+  "description": "神算子前端构建工具",
   "engines": {
     "node": ">=8.5.0",
     "npm": ">=5.3.0"
   },
   "repository": {
-    "url": "https://github.com/shuoshubao/parce.git",
+    "url": "https://github.com/sean-qiu/parce.git",
     "type": "git"
   },
-  "author": "shuoshubao <759979885@qq.com>",
+  "author": "sean-qiu <283535972@qq.com>",
   "license": "MIT",
   "bin": {
     "parce": "./index.js"
