@@ -5,16 +5,16 @@
 </template>
 
 <script>
-    export default {
-        data () {
-            return {
-                msg: 'world'
-            }
-        }
+export default {
+    data() {
+        return {
+            msg: 'world'
+        };
     }
+};
 </script>
 
-<style rel="stylesheet/scss" scoped>
+<style scoped>
 h1 {
     font-size: 20px;
 }

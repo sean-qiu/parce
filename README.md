@@ -3,14 +3,14 @@
 * mkdir your_project
 * cd your_project
 * yarn init -y
-* yarn add senses-parce
-* node_modules/.bin/senses-parce init
+* yarn add parce
+* node_modules/.bin/parce init
 * yarn run dll
 * yarn run dev
 * yarn run build
 * yarn run server
 
-> senses-parce -h
+> parce -h
 
 # Init
 
@@ -27,23 +27,27 @@
 
 * project.config.js 项目配置文件
 * src/common.js 项目公用文件
-* src/view/**/index.vue 根据 `index.vue`, `index.jsx` 生成页面
+* src/view/\*\*/index.vue 根据 `index.vue` 生成页面
 
 # project.config.js
 
 ```
 module.exports = {
-    title: '', // 项目标题
     port: 8080, // 端口号
-    dllEntry: '', // webpack.dll `[]` || `{}`
+    title: '', // 项目标题
+    publicPath: '', // publicPath
     pathConfig: {
         src: 'src',
         common: 'src/common.js',
         view: 'src/view',
         webpackConfig: ''
     },
+    devServer: {},
+    apiProxy: {},
+    dllEntry: '', // webpack.dll `[]` || `{}`
     provide: {}, // webpack.ProvidePlugin
-    styles: '', // 支持的styles, '' || []
+    styles: [], // 支持的styles, []
+    loaders: [], // rules.loader
 }
 ```
 
@@ -60,7 +64,7 @@ module.exports = webpackConfig => {
 }
 ```
 
-# webpack.dll 支持打包多个dll包
+# webpack.dll 支持打包多个 dll 包
 
 ```
 // 单个包 (key值默认为 'vendor')
@@ -85,19 +89,16 @@ dllEntry: {
 
 ```
 {
-    classnames: 'classnames',
-    React: 'react',
-    ReactDOM: 'react-dom',
-    PureRenderMixin: 'react-addons-pure-render-mixin',
-    PropTypes: 'prop-types'
+    qs: 'query-string',
+    _: 'lodash'
 }
 ```
 
 # 支持的 style
 
 ```
-sass, scss 默认支持
-less 需要安装: `less` `less-loader`
+less 默认支持
+scss 需要安装: `node-sass` `sass-loader`
 stylus 需要安装: `stylus` `stylus-loader`
 ```
 

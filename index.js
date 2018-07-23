@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
-const {resolve} = require('path')
-const commander = require('commander')
-const {exec} = require('child_process')
-const {webpackDllBuild, webpackBuild} = require('./webpack')
-const {initProject} = require('./utils')
-const {prepack} = require('./webpack/utils')
+const {resolve} = require('path');
+const commander = require('commander');
+const {exec} = require('child_process');
+const {webpackDllBuild, webpackBuild} = require('./webpack');
+const {initProject} = require('./utils');
+const {prepack} = require('./webpack/utils');
 
-const pkg = require(resolve(__dirname, './package.json'))
+const pkg = require(resolve(__dirname, './package.json'));
 
 commander
     .version(pkg.version)
@@ -19,26 +19,26 @@ commander
     .option('dev', '开发模式')
     .option('build', 'webpack.build')
     .option('server', 'pm2')
-    .parse(process.argv)
+    .parse(process.argv);
 
 if (commander.init) {
-    initProject()
+    initProject();
 }
 
 if (commander.dll) {
-    webpackDllBuild()
+    webpackDllBuild();
 }
 
 if (commander.dev) {
-    prepack()
-    require('./server')
+    prepack();
+    require('./server');
 }
 
 if (commander.build) {
-    prepack()
-    webpackBuild()
+    prepack();
+    webpackBuild();
 }
 
 if (commander.server) {
-    exec(`pm2 restart ${__dirname}/server`)
+    exec(`pm2 restart ${__dirname}/server`);
 }

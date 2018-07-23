@@ -1,8 +1,8 @@
-const {log, only} = require('../../utils')
-const formatStats = require('./formatStats')
-const prepack = require('./prepack')
+const {log, only} = require('../../utils');
+const formatStats = require('./formatStats');
+const prepack = require('./prepack');
 
-const noop = () => {}
+const noop = () => {};
 
 module.exports = {
     log,
@@ -10,4 +10,4 @@ module.exports = {
     noop,
     formatStats,
     prepack
-}
+};

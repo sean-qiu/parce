@@ -1,7 +1,9 @@
-const {rules: styleRules} = require('./utils/style')
+const {projectConfig} = require('./config');
+const {rules: styleRules} = require('./utils/style');
 
 module.exports = [
     ...styleRules,
+    ...projectConfig.loaders,
     {
         test: /\.vue$/,
         use: 'happypack/loader?id=vue',
@@ -10,11 +12,6 @@ module.exports = [
     {
         test: /\.js$/,
         use: 'happypack/loader?id=js',
-        exclude: [/node_modules/]
-    },
-    {
-        test: /\.jsx$/,
-        use: 'happypack/loader?id=jsx',
         exclude: [/node_modules/]
     },
     {
@@ -29,4 +26,4 @@ module.exports = [
             }
         ]
     }
-]
+];
