@@ -7,7 +7,7 @@ let {dllEntry} = projectConfig;
 
 if (dllEntry) {
     if (Array.isArray(dllEntry)) {
-        projectConfig.dllEntry.push('babel-polyfill', 'vue', 'element-ui');
+        projectConfig.dllEntry.push('babel-polyfill');
         dllEntry = {
             vendor: projectConfig.dllEntry
         };

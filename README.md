@@ -3,14 +3,14 @@
 * mkdir your_project
 * cd your_project
 * yarn init -y
-* yarn add parce
-* node_modules/.bin/parce init
+* yarn add senses-parce
+* node_modules/.bin/senses-parce init
 * yarn run dll
 * yarn run dev
 * yarn run build
 * yarn run server
 
-> parce -h
+> senses-parce -h
 
 # Init
 
